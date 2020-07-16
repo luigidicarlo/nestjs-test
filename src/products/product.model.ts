@@ -20,4 +20,18 @@ export class Product extends Document {
   }
 }
 
+export class SimplifiedProduct {
+  public id: string
+  public name: string
+  public description: string
+  public price: number
+
+  constructor(productModel: Product) {
+    this.id = productModel.id
+    this.name = productModel.name
+    this.description = productModel.description
+    this.price = productModel.price
+  }
+}
+
 export const ProductSchema = SchemaFactory.createForClass(Product)
